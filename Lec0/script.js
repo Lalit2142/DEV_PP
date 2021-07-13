@@ -1,1 +1,0 @@
-console.log("All the functions are present here") ;
