@@ -41,11 +41,12 @@ function sortFolder(folderPath){
 
     let contents = fs.readdirSync(folderPath) ;
 
-    //console.log(contents) ; //[".png",".jpg",".doc",.......]
+    //console.log(contents) ; [".png",".jpg",".doc",.......]
 
     for(let i = 0 ; i < contents.length ; i++){
 
         let extension = path.extname(contents[i]);
+
          //console.log(extension) ; 
 
         let hasFolder = checkFolder(extension) ;
