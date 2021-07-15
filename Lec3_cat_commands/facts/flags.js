@@ -4,16 +4,22 @@ let fileContent = fs.readFileSync("./f1.txt",'utf-8') ;
 
 // console.log(fileContent) ;
 let content = fileContent.split("\r\n") ;
-console.log(content) ;
+// console.log(content) ;
 
 // -s
 
 function removeExtraLines(data){
 
     let res = [] ;
+    let emptyPushed = false ;
 
     for(let i = 0 ; i < data.length ; i++){
-        if(data[i] != ''){
+        
+        if(data[i] == '' && !emptyPushed){
+            res.push(data[i]) ;
+            emptyPushed = true ;
+        }
+        else if(data[i] != ''){
             res.push(data[i]) ;
         }
     }
@@ -23,7 +29,7 @@ function removeExtraLines(data){
     console.log(resString) ;
 }
 
-// removeExtraLines(content) ;
+removeExtraLines(content) ;
 
 // -b
 
@@ -55,4 +61,4 @@ function addLineNumbersToNonAllLines(data){
     console.log(resString) ;
 }
 
-addLineNumbersToNonAllLines(content) ;
+// addLineNumbersToNonAllLines(content) ;
