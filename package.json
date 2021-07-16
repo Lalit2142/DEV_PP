@@ -1,0 +1,23 @@
+{
+  "name": "Dev_PP2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lalit2142/DEV_PP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lalit2142/DEV_PP/issues"
+  },
+  "homepage": "https://github.com/Lalit2142/DEV_PP#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10"
+  }
+}
