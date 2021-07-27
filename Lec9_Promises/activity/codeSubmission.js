@@ -34,8 +34,32 @@ browserOpenPromise.then(function(browser){
     return loginButtonPromise ;
 })
 .then(function(){
-    console.log("Entered the Hackerrank !!!") ;
+    let waitAndClickPromise = waitAndClick("#base-card-1-link") ;
+    return waitAndClickPromise ;
+})
+.then(function () {
+    let waitAndClickPromise = waitAndClick('a[data-attr1="warmup"]');
+    return waitAndClickPromise;
+})
+.then(function(){
+    console.log("Entered the Warm Up Page !!!") ;
 })
 .catch(function(error){
     console.log(error) ;
 })
+
+function waitAndClick(selector){
+    return new Promise(function(resolve,reject){
+        let waitPromise = tab.waitForSelector(selector,{visible : true}) ;
+        waitPromise.then(function(){
+            let clickPromise = tab.click(selector) ;
+            return clickPromise ;
+        })
+        .then(function(){
+            resolve() ;
+        })
+        .catch(function(){
+            reject() ;
+        })
+    }) ;
+}
