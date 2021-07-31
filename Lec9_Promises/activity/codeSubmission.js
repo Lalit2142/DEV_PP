@@ -33,6 +33,8 @@ browserOpenPromise.then(function(browser){
     let loginButtonPromise = tab.click('.ui-btn.ui-btn-large.ui-btn-primary.auth-button.ui-btn-styled') ;
     return loginButtonPromise ;
 })
+// whenever there is navigation , it takes time to load new page html(dom) , so we need to wait until the new pages load
+// that's why we should wait before clicking an a tag link
 .then(function(){
     let waitAndClickPromise = waitAndClick("#base-card-1-link") ;
     return waitAndClickPromise ;
